@@ -1,20 +1,33 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet,StatusBar } from 'react-native'
+import { useFonts } from "expo-font"
+import { colors } from './src/Global/colors'
+import Navigator from './src/Navigation/Navigator'
+import { fonts } from './src/Global/fonts'
 
-export default function App() {
+
+
+const  App = () => {
+
+  const [fontLoaded] = useFonts(fonts)
+  if(!fontLoaded) return null
+  
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <>
+      <StatusBar
+        backgroundColor={colors.green1}
+      />
+      <Navigator/>
+    </>
+  )
 }
+
+export default App
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: colors.background,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'start',
   },
-});
+})
