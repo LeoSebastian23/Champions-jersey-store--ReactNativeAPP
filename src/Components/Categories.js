@@ -1,9 +1,11 @@
-import { FlatList, StyleSheet, Text, View } from 'react-native'
-import categories from "../Data/categories.json"
+import { FlatList, StyleSheet} from 'react-native'
 import CategoryItem from './CategoryItem'
-import { colors } from '../Global/colors'
+import { useGetCategoriesQuery } from '../app/services/shopServices'
+
 
 const Categories = ({navigation,route}) => {
+  const {data:categories} = useGetCategoriesQuery()
+
   return (
     <FlatList
         style={styles.container}
@@ -19,6 +21,6 @@ export default Categories
 const styles = StyleSheet.create({
     container:{
         width:"100%",
-        backgroundColor:colors.background,
+        
     }
 })

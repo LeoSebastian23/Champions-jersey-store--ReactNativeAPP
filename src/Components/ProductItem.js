@@ -1,15 +1,12 @@
-import { StyleSheet, Text, View,Image,useWindowDimensions, Pressable } from 'react-native'
+import { StyleSheet, Text,Image,useWindowDimensions, Pressable } from 'react-native'
 import { colors } from '../Global/colors'
-import { useEffect } from 'react'
 import {  useDispatch } from 'react-redux'
 import { setProductSelected } from '../features/shop/shopSlice'
-
 
 const ProductItem = ({item ,navigation,route }) => {
 
   const {width} = useWindowDimensions()
   const dispatch = useDispatch()
-
   return (
     <Pressable style={styles.container}  onPress={()=>{
       dispatch( setProductSelected(item.id))
@@ -29,34 +26,32 @@ export default ProductItem
 
 const styles = StyleSheet.create({
    container:{
-        width:"70%",
-        height:200,
+        width:"80%",
+        height:100,
         backgroundColor:colors.backPrimary,
-        marginHorizontal:"5%",
+        marginHorizontal:"10%",
         marginVertical:10,
+        paddingHorizontal:10,
         paddingVertical:15,
         borderRadius:5,
-        flexDirection:"column",
+        flexDirection:"row",
         alignItems:"center",
         justifyContent:"space-between",
+        gap:30
     },
     text:{
-      width:"90%",
+      width:"60%",
       textAlign:"center",
-      fontSize:20,
-      fontWeight:'900',
-      fontStyle:'italic',
+      fontSize:20
     },
     textMin:{
-      width:"90%",
+      width:"60%",
       textAlign:"center",
-      fontSize:15,
-      fontWeight:'300',
+      fontSize:15
     },
     image:{
         minWidth:90,
-        height:"80%",
-        width:"80%",
-        borderRadius:5,
+        height:90,
+        width:"30%"
     }
 })

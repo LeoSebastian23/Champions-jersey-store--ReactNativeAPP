@@ -21,7 +21,7 @@ export default OrderItem
 
 const styles = StyleSheet.create({
     container:{
-        backgroundColor:colors.backSecondary,
+        backgroundColor:colors.backPrimary,
         margin:10,
         padding:10,
         height:100,
@@ -38,10 +38,8 @@ const styles = StyleSheet.create({
     text1:{
         fontSize:19,
         fontWeight:"bold",
-
     },
     text2:{
         fontSize:17,
-
     }
 })

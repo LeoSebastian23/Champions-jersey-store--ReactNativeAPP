@@ -4,20 +4,17 @@ import CardShadow from '../Wrappers/CardShadow'
 import { useDispatch } from 'react-redux'
 import { setProductsFilteredByCategory} from "../features/shop/shopSlice"
 
-  const Upper = (cadena) => {
-    return cadena.toUpperCase();
-  };
-
 const CategoryItem = ({category,navigation,route }) => {
+
   const dispatch = useDispatch()
+
   return (
-    <Pressable onPress={()=> {
-      dispatch(setProductsFilteredByCategory(category))
-      navigation.navigate("Category",{category})
-    }
-      }>
+    <Pressable onPress={()=>{ 
+        dispatch(setProductsFilteredByCategory(category))
+        navigation.navigate("Category",{category})
+      }}>
       <CardShadow style={styles.container}>
-        <Text style={styles.text}>{Upper(category)}</Text>
+        <Text style={styles.text}>{category}</Text>
       </CardShadow>
     </Pressable>
   )

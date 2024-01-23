@@ -1,21 +1,16 @@
-import { StyleSheet, Text, View , Image, Pressable,useWindowDimensions } from 'react-native'
+import { StyleSheet, Text, View , Image, Pressable } from 'react-native'
 import React, { useEffect, useState } from 'react'
-import Header from '../Components/Header'
-import allProduct from "../Data/products.json"
 import { colors } from '../Global/colors'
+import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { addItem } from '../features/cart/cartSlice'
 
 const ItemDetail = ({route}) => {
-  const {id} = route.params
-
-  const [product,setProduct] = useState({})
+  const dispatch = useDispatch()
+  const product = useSelector((state)=> state.shop.value.productSelected)
   const images = product.images ? product.images : []
 
-  useEffect(()=>{
 
-    const productFinded = allProduct.find(product => product.id === id)
-    setProduct(productFinded)
-
-  },[id])
 
   return (
     <View style={styles.container}>
@@ -23,16 +18,16 @@ const ItemDetail = ({route}) => {
           <Image
             style={styles.image}
             source={{uri:images[2]}}
-            resizeMode='cover's
+            resizeMode='cover'
           />
           <View style={styles.containerText}>
             <Text style={styles.title}>{product.title}</Text>
-            <Text style={styles.description}>{product.description}</Text>
+            <Text>{product.description}</Text>
           </View>
           <View style={styles.containerPrice}>
             <Text style={styles.price}>$ {product.price}</Text>
-            <Pressable style={styles.buyNow}>
-              <Text style={styles.buyNowText}>Buy Now</Text>
+            <Pressable style={styles.buyNow} onPress={()=> dispatch(addItem(product)) }>
+              <Text style={styles.buyNowText}>Carrito</Text>
             </Pressable>
           </View>
         </View>
@@ -48,16 +43,13 @@ const styles = StyleSheet.create({
         flex:1,
         justifyContent:"start",
         alignItems:"center",
-        backgroundColor:'#ffffe0'
     },
     content:{
-      marginTop:10,
-      width:"100%",
-      alignItems:'center',
+      width:"100%"
     },
+
     image:{
-      width:"90%",
-      borderRadius:10,
+      width:"100%",
       height:300
     },
     goBack:{
@@ -69,12 +61,7 @@ const styles = StyleSheet.create({
      containerText:{
       gap:25,
       paddingHorizontal:5,
-      paddingVertical:25,
-     },
-     description:{
-      fontSize:18,
-      fontWeight:"normal",
-      color:'#000022',
+      paddingVertical:25
      },
      containerPrice:{
         width:"100%",
@@ -84,19 +71,14 @@ const styles = StyleSheet.create({
         marginVertical:10
      },
      title:{
-      fontSize:25,
-      fontWeight:"900",
-      color:'#2f4f4f',
-      padding:5,
-      borderBottomWidth:1,
-      borderTopWidth:1,
-      textAlign:'center'
+      fontSize:20,
+      fontWeight:"bold"
      },
      price:{
       fontSize:30
      },
      buyNow:{
-      backgroundColor:'#1e90ff',
+      backgroundColor:colors.backSecondary,
       paddingVertical:5,
       paddingHorizontal:10,
       borderRadius:5
