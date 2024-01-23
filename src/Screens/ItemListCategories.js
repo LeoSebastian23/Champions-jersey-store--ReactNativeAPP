@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
  },
  goBack:{
   width:"100%",
-  backgroundColor:colors.green1,
+  backgroundColor:colors.backPrimary,
   padding:10,
   paddingStart:40
  }

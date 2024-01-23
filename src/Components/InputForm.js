@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
         borderBottomWidth:3,
         borderBottomColor:colors.backSecondary,
         padding:2,
-        fontFamily:"Josefin",
+
         fontSize:14,
         marginHorizontal:"5%",
         marginVertical:10
@@ -38,12 +38,12 @@ const styles = StyleSheet.create({
         width:"90%",
         marginHorizontal:"5%",
         fontSize:16,
-        fontFamily:"Josefin"
+
       },
       error:{
         fontSize:16,
         color:"red",
-        fontFamily:"Josefin",
+
         fontStyle:"italic",
         marginLeft:20
       }

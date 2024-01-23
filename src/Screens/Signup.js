@@ -6,7 +6,7 @@ import { colors } from '../Global/colors'
 import { useSignupMutation } from '../app/services/auth'
 import { useDispatch } from 'react-redux'
 import { setUser } from '../features/auth/authSlice'
-import { signupSchema } from '../validations/signupSchema'
+import { signupSchema } from '../validations/SignUpSchema'
 
 const Signup = ({navigation}) => {
   const dispatch = useDispatch()
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     },
     container:{
       width:"90%",
-      backgroundColor:colors.green1,
+      backgroundColor:colors.backPrimary,
       gap:15,
       borderRadius:10,
       justifyContent:"center",
