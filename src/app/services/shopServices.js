@@ -23,6 +23,7 @@ export const shopApi = createApi({
         body:order
       })
   }),
+
     postProfileImage: builder.mutation({
       query: ({localId,image}) => ({
         url:`profileImage/${localId}.json`,
@@ -35,6 +36,7 @@ export const shopApi = createApi({
       query: (localId) => `profileImage/${localId}.json`,
       providesTags:["image"]
     }),
+    
     postUserLocation: builder.mutation({
       query: ({localId,locationFormatted}) => ({
         url:`userLocation/${localId}.json`,
