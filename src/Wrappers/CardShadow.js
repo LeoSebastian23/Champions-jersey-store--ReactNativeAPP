@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
                 shadowOffset:{width:3,height:5},
                 shadowRadius:1,
                 shadowOpacity:1,
-                borderRadius:15,
+                borderRadius:2,
     }
 
 })

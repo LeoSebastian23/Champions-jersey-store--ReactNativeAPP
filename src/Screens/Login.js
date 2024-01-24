@@ -1,5 +1,5 @@
 import {useState ,useEffect} from 'react'
-import { View, Text ,StyleSheet, Pressable} from 'react-native'
+import { View, Text ,StyleSheet, Pressable, ImageBackground} from 'react-native'
 import { colors } from '../Global/colors'
 import InputForm from '../Components/InputForm'
 import SubmitButton from '../Components/SubmitButton'
@@ -26,6 +26,10 @@ const Login = ({navigation}) => {
     triggerLogin({email,password})
   }
   return (
+    <ImageBackground
+    source={require("../../assets/ImageBG.jpg")}
+    style={styles.containerIMG}
+  >
     <View style={styles.main}>
       <View style={styles.container}>
           <Text style={styles.title} >Login to start</Text>
@@ -50,6 +54,7 @@ const Login = ({navigation}) => {
           </Pressable>
       </View>
     </View>
+    </ImageBackground>
   )
 }
 
@@ -66,11 +71,16 @@ const styles = StyleSheet.create({
     container:{
       width:"90%",
       backgroundColor:colors.backPrimary,
+      opacity:0.9,
       gap:15,
       borderRadius:10,
       justifyContent:"center",
       alignItems:"center",
       paddingVertical:20
+    },
+    containerIMG: {
+      flex: 1,
+      resizeMode: "cover", // o 'contain' según tus necesidades
     },
     title:{
       fontSize:22,

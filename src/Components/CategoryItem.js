@@ -1,41 +1,54 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native'
-import { colors } from '../Global/colors'
-import CardShadow from '../Wrappers/CardShadow'
-import { useDispatch } from 'react-redux'
-import { setProductsFilteredByCategory} from "../features/shop/shopSlice"
+import { Pressable, StyleSheet, Text, View, ImageBackground } from 'react-native';
+import { colors } from '../Global/colors';
+import CardShadow from '../Wrappers/CardShadow';
+import { useDispatch } from 'react-redux';
+import { setProductsFilteredByCategory } from '../features/shop/shopSlice';
 
-const CategoryItem = ({category,navigation,route }) => {
-
-  const dispatch = useDispatch()
+const CategoryItem = ({ category, navigation, route }) => {
+  const dispatch = useDispatch();
 
   return (
-    <Pressable onPress={()=>{ 
-        dispatch(setProductsFilteredByCategory(category))
-        navigation.navigate("Category",{category})
-      }}>
+    <Pressable
+  onPress={() => {
+    dispatch(setProductsFilteredByCategory((category.id)));
+    navigation.navigate('Category', { categoryName: category.id });
+  }}>
       <CardShadow style={styles.container}>
-        <Text style={styles.text}>{category}</Text>
+        <ImageBackground
+          style={styles.image}
+          source={{ uri: category.image }} // Utiliza la URL de la imagen
+          resizeMode="cover">
+          <Text style={styles.text}>{category.nombre}</Text>
+        </ImageBackground>
       </CardShadow>
     </Pressable>
-  )
-}
+  );
+};
 
-export default CategoryItem
+export default CategoryItem;
 
 const styles = StyleSheet.create({
     container:{
-        width:"80%",
-        marginHorizontal:"10%",
-        backgroundColor:colors.backSecondary,
+        width:"90%",
+        height:200,
+        backgroundColor:colors.backGray,
+        opacity: 0.8,
         margin:10,
         padding:10,
-        justifyContent:"center",
         alignItems:"center",
+        justifyContent:'flex-end',
         color:"#f0f8ff"
     },
     text:{
       color:"#f0f8ff",
       fontWeight: '300',
-      fontSize: 20,
-    }
+      fontSize: 30,
+    },
+    image: {
+      flex: 1,
+      width: '100%',
+      height: '100%',
+      justifyContent: 'flex-end',
+      alignItems: 'center',
+    },
 })

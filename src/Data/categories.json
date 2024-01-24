@@ -1,24 +1,22 @@
 
 [
-    "smartphones",
-    "laptops",
-    "fragrances",
-    "skincare",
-    "groceries",
-    "home-decoration",
-    "furniture",
-    "tops",
-    "womens-dresses",
-    "womens-shoes",
-    "mens-shirts",
-    "mens-shoes",
-    "mens-watches",
-    "womens-watches",
-    "womens-bags",
-    "womens-jewellery",
-    "sunglasses",
-    "automotive",
-    "motorcycle",
-    "lighting"
-  ]
+  {
+    "id": 1,
+    "nombre": "Copa del Mundo",
+    "imagen": "https://i.ibb.co/ZcXYmNd/copadelmundo.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Copa Libertadores",
+    "imagen": "https://i.ibb.co/wYF4kP8/copalibertadores.jpg"
+
+  },
+  {
+    "id": 3,
+    "nombre": "Champions Leagues",
+    "imagen": "https://i.ibb.co/NY5JPmb/champions-Leagues.jpg"
+  }
+]
+
+
 

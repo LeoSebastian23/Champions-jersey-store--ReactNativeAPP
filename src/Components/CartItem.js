@@ -20,7 +20,7 @@ export default CartItem
 
 const styles = StyleSheet.create({
     container:{
-        backgroundColor:colors.green3,
+        backgroundColor:colors.backSecondary,
         margin:10,
         padding:10,
         height:100,
@@ -37,12 +37,12 @@ const styles = StyleSheet.create({
     text1:{
         fontSize:19,
         color:colors.lightGray,
-        fontFamily:"Josefin"
+
     },
     text2:{
         fontSize:17,
         color:colors.lightGray,
-        fontFamily:"Josefin"
+
     }
 
 })
