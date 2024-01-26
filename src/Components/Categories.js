@@ -1,38 +1,35 @@
-import { FlatList, StyleSheet,ImageBackground} from 'react-native'
-import CategoryItem from './CategoryItem'
-import { useGetCategoriesQuery } from '../app/services/shopServices'
+import { FlatList, StyleSheet, ImageBackground } from "react-native";
+import CategoryItem from "./CategoryItem";
+import { useGetCategoriesQuery } from "../app/services/shopServices";
 
-
-const Categories = ({navigation,route}) => {
-  const {data:categories} = useGetCategoriesQuery()
-
+const Categories = ({ navigation, route }) => {
+  const { data: categories } = useGetCategoriesQuery();
 
   return (
     <ImageBackground
       source={require("../../assets/HomeBG.jpg")}
       style={styles.containerIMG}
     >
-    
-    <FlatList
+      <FlatList
         style={styles.container}
         data={categories}
         keyExtractor={(item) => item.id.toString()}
-        renderItem={({item}) => <CategoryItem  category={item} navigation={navigation} route={route}/>}
-    />
-    
+        renderItem={({ item }) => (
+          <CategoryItem category={item} navigation={navigation} route={route} />
+        )}
+      />
     </ImageBackground>
-    
-  )
-}
+  );
+};
 
-export default Categories
+export default Categories;
 
 const styles = StyleSheet.create({
-    container:{
-        width:"100%"
-    },
-    containerIMG: {
-      flex: 1,
-      resizeMode: "contain",
-    }
-})
+  container: {
+    width: "100%",
+  },
+  containerIMG: {
+    flex: 1,
+    resizeMode: "contain",
+  },
+});

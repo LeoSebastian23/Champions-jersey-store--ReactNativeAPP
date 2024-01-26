@@ -3,18 +3,18 @@
   {
     "id": 1,
     "nombre": "Copa del Mundo",
-    "imagen": "https://i.ibb.co/ZcXYmNd/copadelmundo.jpg"
+    "imagen": "https://i.ibb.co/4tTgy9j/cupworld.jpg"
   },
   {
     "id": 2,
     "nombre": "Copa Libertadores",
-    "imagen": "https://i.ibb.co/wYF4kP8/copalibertadores.jpg"
+    "imagen": "https://i.ibb.co/SKZd2Vm/copa-libertadores-0.webp"
 
   },
   {
     "id": 3,
     "nombre": "Champions Leagues",
-    "imagen": "https://i.ibb.co/NY5JPmb/champions-Leagues.jpg"
+    "imagen": "https://i.ibb.co/XjhYpkD/championsleagues.webp"
   }
 ]
 

@@ -8,7 +8,7 @@ export const shopApi = createApi({
   endpoints: (builder) => ({
     getProducts: builder.query({
       query: (category) =>
-        `products.json?orderBy="category"&equalTo="${category.id}"`,
+        `products.json?orderBy="category"&equalTo="${category}"`,
     }),
 
     getProduct: builder.query({
@@ -19,11 +19,12 @@ export const shopApi = createApi({
       query: () => "categories.json",
       transformResponse: (response) => {
         // Transformar la respuesta para incluir la información de imágenes
-        const categoriesWithImages = response.map((category) => ({
+        const categoriesWithImages = response ? response.map((category) => ({
           ...category,
           image: category.imagen, // Ajusta el nombre del campo según tu esquema actual
-        }));
+        })) : [];       
         return categoriesWithImages;
+        
       },
     }),
 

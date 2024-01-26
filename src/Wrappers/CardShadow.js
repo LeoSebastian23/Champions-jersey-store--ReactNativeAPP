@@ -1,5 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { colors } from '../Global/colors'
+
 
 const CardShadow = ({children,style}) => {
   return (
@@ -21,6 +23,8 @@ const styles = StyleSheet.create({
                 shadowRadius:1,
                 shadowOpacity:1,
                 borderRadius:2,
+                backgroundColor:colors.colorFont,
+                opacity:0.2,
     }
 
 })

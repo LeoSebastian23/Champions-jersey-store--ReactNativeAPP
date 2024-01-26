@@ -1,54 +1,72 @@
-import { Button, FlatList, Pressable, StyleSheet, Text, TextInput, View } from 'react-native'
-import Header from '../Components/Header'
-import Search from '../Components/Search'
-import allProducts from "../Data/products.json"
-import ProductItem from '../Components/ProductItem'
-import { useEffect, useState } from 'react'
-import { colors } from '../Global/colors'
+import {
+  FlatList,
+  StyleSheet,
+  ImageBackground,
+} from "react-native";
+import Header from "../Components/Header";
+import Search from "../Components/Search";
+import allProducts from "../Data/products.json";
+import ProductItem from "../Components/ProductItem";
+import { useEffect, useState } from "react";
+import { colors } from "../Global/colors";
 
-
-const ItemListCategories = ({navigation,route}) => {
+const ItemListCategories = ({ navigation, route }) => {
   const { categoryName } = route.params;
-  const [keyword,setKeyword] = useState("")
-  const [products,setProducts] = useState(allProducts)
+  const [keyword, setKeyword] = useState("");
+  const [products, setProducts] = useState(allProducts);
 
-  useEffect(()=>{
-
+  useEffect(() => {
     if (categoryName) {
-      const productsCategory = allProducts.filter(product => product.id_categoria === categoryName);
-      const productsFiltered = productsCategory.filter(product => product.title.includes(keyword));
+      const productsCategory = allProducts.filter(
+        (product) => product.id_categoria === categoryName
+      );
+      const productsFiltered = productsCategory.filter((product) =>
+        product.title.includes(keyword)
+      );
       setProducts(productsFiltered);
     } else {
-      const productsFiltered = allProducts.filter(product => product.title.includes(keyword));
+      const productsFiltered = allProducts.filter((product) =>
+        product.title.includes(keyword)
+      );
       setProducts(productsFiltered);
     }
-
-
-  },[keyword])
+  }, [keyword]);
 
   return (
     <>
-      <Search setKeyword={setKeyword}/>
-      <FlatList
-        style={styles.container}
-        data={products}
-        keyExtractor={item => item.id}
-        renderItem={({item})=> <ProductItem item={item} navigation={navigation} route={route} />}
-      />
+      <Search setKeyword={setKeyword} />
+      {/* <ImageBackground
+        source={require("../../assets/fondoTienda.jpg")}
+        style={styles.containerIMG}
+      > */}
+        <FlatList
+          style={styles.container}
+          data={products}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => (
+            <ProductItem item={item} navigation={navigation} route={route} />
+          )}
+        />
+      {/* </ImageBackground> */}
+      
     </>
-  )
-}
+  );
+};
 
-export default ItemListCategories
+export default ItemListCategories;
 
 const styles = StyleSheet.create({
- container:{
-  width:"100%",
- },
- goBack:{
-  width:"100%",
-  backgroundColor:colors.backPrimary,
-  padding:10,
-  paddingStart:40
- }
-})
+  container: {
+    width: "100%",
+  },
+  containerIMG: {
+    flex: 1,
+    resizeMode: "cover", // o 'contain' según tus necesidades
+  },
+  goBack: {
+    width: "100%",
+    backgroundColor: colors.backPrimary,
+    padding: 10,
+    paddingStart: 40,
+  },
+});
