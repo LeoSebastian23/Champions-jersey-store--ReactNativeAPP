@@ -19,9 +19,9 @@ const Header = ({ title = "Producto" }) => {
           <Pressable onPress={onLogout} style={styles.logoutIcon}>
             <MaterialIcons
               name="logout"
-              size={30}
+              size={32}
               color="black"
-              style={{ marginLeft: 20, justifyContent:"flex-end",alignContent:"center" }}
+              style={{ marginLeft: 20 }}
             />
           </Pressable>
         )}
@@ -36,10 +36,10 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.backPrimary,
     width: "100%",
-    height: 60,
-    alignItems: "center",
+    height: 50,
+    alignContent: "center",
+    alignItems:"center",
     justifyContent: "center",
-   
     flexDirection: "row",
   },
   text: {

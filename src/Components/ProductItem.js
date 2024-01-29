@@ -30,6 +30,7 @@ const ProductItem = ({ item, navigation, route }) => {
             {/* Agregué una View con fondo transparente para evitar que el texto sea afectado */}
           </ImageBackground>
           <Text style={styles.text}>{item.title}</Text>
+          <Text style={styles.textPrice}>${item.price}</Text>
         </View>
       </View>
     </Pressable>
@@ -47,7 +48,7 @@ const styles = StyleSheet.create({
     alignItems:"center"
   },
   containerProducts: {
-    width:'60%',
+    width:'65%',
     height: 300,
     backgroundColor: `#ffffff`,
     margin: 5,
@@ -57,14 +58,24 @@ const styles = StyleSheet.create({
     color: "#f0f8ff",
     borderWidth: 1,
     borderRadius: 10,
+    borderColor: '#c0c0c0'
   },
   text: {
     alignItems: "flex-end",
-    color: "#2f4f4f",
-    padding: 5,
-    fontWeight: "500",
-    fontSize: 25,
-    borderRadius: 5,
+    color: "#000000",
+    fontWeight: "400",
+    fontSize: 22,
+    margin:1,
+    // borderTopWidth:1,
+    borderBottomWidth:1,
+    borderColor: '#000000'
+  },
+  textPrice:{
+    alignItems: "flex-end",
+    color: "#000000",
+    fontWeight: "600",
+    fontSize: 20,
+    fontVariant:'black'
   },
   image: {
     flex: 1,

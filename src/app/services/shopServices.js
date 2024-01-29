@@ -1,20 +1,21 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { base_url } from "../../firebase/db";
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { base_url } from '../../firebase/db'
+
 
 export const shopApi = createApi({
-  reducerPath: "shopApi",
+  reducerPath: 'shopApi',
   baseQuery: fetchBaseQuery({ baseUrl: base_url }),
-  tagTypes: ["image", "location"],
+  tagTypes:["image","location","order"],
   endpoints: (builder) => ({
     getProducts: builder.query({
-      query: (category) =>
-        `products.json?orderBy="category"&equalTo="${category}"`,
+      query: (category) => `products.json?orderBy="category"&equalTo="${category}"`,
     }),
-
     getProduct: builder.query({
-      query: (id) => `products/${id}.json`,
+        query:(id)=> `products/${id}.json`
     }),
-
+    // getCategories : builder.query({
+    //     query: () => "categories.json"
+    // }),
     getCategories: builder.query({
       query: () => "categories.json",
       transformResponse: (response) => {
@@ -27,51 +28,58 @@ export const shopApi = createApi({
         
       },
     }),
-
     postOrders: builder.mutation({
-      query: (order) => ({
-        url: "orders.json",
-        method: "POST",
-        body: order,
+      query: ({localId,order}) => ({
+        url:`orders/${localId}.json`,
+        method:"POST",
+        body:order
       }),
-    }),
-
+      invalidatesTags:["order"]
+     
+  }),
+  getOrders: builder.query({
+    query: (localId) => `orders/${localId}.json`,
+    transformResponse:(response) => {
+     if(!response) return []
+     const data = Object.keys(response).map(key =>({id:key,...response[key]}))
+     return data
+    },
+    providesTags:["order"]
+  }),
     postProfileImage: builder.mutation({
-      query: ({ localId, image }) => ({
-        url: `profileImage/${localId}.json`,
-        method: "PUT",
-        body: { image },
+      query: ({localId,image}) => ({
+        url:`profileImage/${localId}.json`,
+        method:"PUT",
+        body:{image}
       }),
-      invalidatesTags: ["image"],
+      invalidatesTags:["image"]
     }),
-
     getProfileImage: builder.query({
       query: (localId) => `profileImage/${localId}.json`,
-      providesTags: ["image"],
+      providesTags:["image"]
     }),
-
     postUserLocation: builder.mutation({
-      query: ({ localId, locationFormatted }) => ({
-        url: `userLocation/${localId}.json`,
-        method: "PUT",
-        body: locationFormatted,
+      query: ({localId,locationFormatted}) => ({
+        url:`userLocation/${localId}.json`,
+        method:"PUT",
+        body:locationFormatted
       }),
-      invalidatesTags: ["location"],
+      invalidatesTags:["location"]
     }),
     getUserLocation: builder.query({
       query: (localId) => `userLocation/${localId}.json`,
-      providesTags: ["location"],
+      providesTags:["location"]
     }),
   }),
-});
+})
 
-export const {
-  useGetProductsQuery,
-  useGetProductQuery,
-  useGetCategoriesQuery,
-  usePostOrdersMutation,
-  usePostProfileImageMutation,
-  useGetProfileImageQuery,
-  usePostUserLocationMutation,
-  useGetUserLocationQuery,
-} = shopApi;
+export const { useGetProductsQuery,
+               useGetProductQuery,
+               useGetCategoriesQuery ,
+              usePostOrdersMutation,
+              useGetOrdersQuery,
+              usePostProfileImageMutation,
+              useGetProfileImageQuery,
+              usePostUserLocationMutation,
+              useGetUserLocationQuery
+             } = shopApi

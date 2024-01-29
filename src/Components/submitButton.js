@@ -20,12 +20,12 @@ const styles = StyleSheet.create({
         width:"60%",
         backgroundColor:colors.backSecondary,
         padding:10,
-        alignItems:"enter",
-        borderRadius:10
+        alignItems:"center",
+        borderRadius:10,
     },
     text:{
         textAlign:"center",
         color:"white",
-        fontSize:18
+        fontSize:18,
     }
 })
