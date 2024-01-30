@@ -27,7 +27,7 @@ const Login = ({navigation}) => {
   }
   return (
     <ImageBackground
-    source={require("../../assets/ImageBG.jpg")}
+    source={require("../../assets/bg/ImageBG.jpg")}
     style={styles.containerIMG}
   >
     <View style={styles.main}>

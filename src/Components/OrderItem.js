@@ -3,14 +3,13 @@ import {Feather} from "@expo/vector-icons"
 import { colors } from '../Global/colors'
 
 const OrderItem = ({order}) => {
-    const total = order.items
-        .reduce((acc,product)=> acc + (product.price * product.quantity),0)
+
 
   return (
     <View style={styles.container}>
       <View style={styles.textContainer}>
-            <Text style={styles.text1}>{new Date(order.createdAt).toLocaleString()}</Text>
-            <Text style={styles.text2}>Total: $ {total}</Text>
+            <Text style={styles.text1}>{order.updateAt}</Text>
+            <Text style={styles.text2}>Total: $ {order.total}</Text>
       </View>
       <Feather name="search" size={25} color="black"/>
     </View>
@@ -29,7 +28,8 @@ const styles = StyleSheet.create({
         justifyContent:"space-between",
         alignItems:"center",
         borderRadius:10,
-        borderWidth:2
+        borderWidth:2,
+        opacity:0.9,
     },
     textContainer:{
         width:"70",
@@ -38,8 +38,10 @@ const styles = StyleSheet.create({
     text1:{
         fontSize:19,
         fontWeight:"bold",
+
     },
     text2:{
         fontSize:17,
+
     }
 })

@@ -1,15 +1,15 @@
 {
   "expo": {
-    "name": "my-app",
+    "name": "T-Shirt Footbal Champions",
     "slug": "my-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/iconTShirt.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#66cdaa"
     },
     "assetBundlePatterns": [
       "**/*"

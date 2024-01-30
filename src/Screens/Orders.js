@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet, Text, View } from 'react-native'
+import { FlatList, StyleSheet, Text, View,ImageBackground } from 'react-native'
 import OrderItem from '../Components/OrderItem'
 import { useGetOrdersQuery } from '../app/services/shopServices'
 import { useEffect, useState } from 'react'
@@ -23,16 +23,25 @@ const Orders = () => {
   if(loading) return  <LoadingSpinner/>
 
   return (
+    <ImageBackground
+      source={require("../../assets/bg/bgOrder.webp")}
+      style={styles.containerIMG}
+    >
     <FlatList
         data={data}
         keyExtractor={item => item.id}
         renderItem={({item}) => <OrderItem order={item}/>}
     />
+    </ImageBackground>
   )
 }
 
 export default Orders
 
 const styles = StyleSheet.create({
-    
+  containerIMG: {
+    flex: 1,
+    resizeMode: "cover", // o 'contain' según tus necesidades
+    opacity:0.9,
+  },
 })

@@ -7,7 +7,7 @@ const Categories = ({ navigation, route }) => {
 
   return (
     <ImageBackground
-      source={require("../../assets/HomeBG.jpg")}
+      source={require("../../assets/bg/HomeBG.jpg")}
       style={styles.containerIMG}
     >
       <FlatList
