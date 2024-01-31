@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
         width:"90%",
         marginHorizontal:"5%",
         fontSize:16,
+        fontWeight:'600',
 
       },
       error:{

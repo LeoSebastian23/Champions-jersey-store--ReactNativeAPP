@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
       borderRadius:10,
       justifyContent:"center",
       alignItems:"center",
-      paddingVertical:20
+      paddingVertical:20,
     },
     containerIMG: {
       flex: 1,
@@ -84,6 +84,8 @@ const styles = StyleSheet.create({
     },
     title:{
       fontSize:22,
+      fontWeight:'500',
+      letterSpacing: 1,
     },
     sub:{
       fontSize:14,

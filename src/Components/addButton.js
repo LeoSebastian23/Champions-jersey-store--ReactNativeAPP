@@ -19,11 +19,12 @@ const styles = StyleSheet.create({
         backgroundColor:colors.backPrimary,
         width:"70%",
         paddingVertical:8,
-        margin:10
+        margin:10,
+        borderRadius:10,
     },
     text:{
-        color:"white",
+        color:"black",
         textAlign:"center",
-        fontSize:18
+        fontSize:24
     }
 })

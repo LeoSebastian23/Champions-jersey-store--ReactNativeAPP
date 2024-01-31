@@ -14,5 +14,5 @@ const Home = ({navigation,route}) => {
 export default Home
 
 const styles = StyleSheet.create({
-
+  
 })

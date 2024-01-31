@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 42,
     fontWeight:"400",
-
+    letterSpacing: 1,
   },
   sub: {
     fontSize: 14,

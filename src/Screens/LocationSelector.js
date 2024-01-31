@@ -6,6 +6,7 @@ import MapPreview from '../Components/MapPreview'
 import { googleApi } from '../firebase/googleApi'
 import {usePostUserLocationMutation } from '../app/services/shopServices'
 import { useSelector } from 'react-redux'
+import { date } from 'yup'
 
 const LocationSelector = ({navigation}) => {
 
@@ -28,8 +29,6 @@ const LocationSelector = ({navigation}) => {
                 latitude:location.coords.latitude,
                 longitude:location.coords.longitude
             })
-            
-            
         })()
     },[])
 
@@ -40,13 +39,14 @@ const LocationSelector = ({navigation}) => {
             const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${location.latitude},${location.longitude}&key=${googleApi.mapStatic}`)
 
             const data = await response.json()
+            console.log(data.results[0].formatted_address)
             setAddress(data.results[0].formatted_address)
           }
       
         } catch (error) {
           setErrorMsg(error.message)
         }
-      })()
+      })() 
     },[location])
 
     const onConfirmAddress = async () => {
@@ -66,7 +66,9 @@ const LocationSelector = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>{address} </Text>
+      <Text style={styles.text}>Direccion: {address}</Text>
+      <Text style={styles.text2}>Longitud: {location.longitude}</Text>
+      <Text style={styles.text2}>Latitud: {location.latitude}</Text>
       <MapPreview latitude={location.latitude} longitude={location.longitude}/>
       <AddButton title="Confirmar Localizacion" onPress={onConfirmAddress}/>
     </View>
@@ -77,11 +79,24 @@ export default LocationSelector
 
 const styles = StyleSheet.create({
     container:{
-        alignItems:"center",
-        marginTop:40,
-        gap:20
+      flex: 1,
+      alignItems: "center",
+      justifyContent: "center",
+      backgroundColor:'#5f9ea0'
     },
     text:{
-        fontSize:16
-    }
+        fontSize:24,
+        backgroundColor:'#f5f5dc',
+        padding:8,
+        borderRadius:10,
+        margin:5,
+        fontWeight:'500'
+    },
+    text2:{
+      fontSize:18,
+      backgroundColor:'#f5f5dc',
+      padding:8,
+      borderRadius:10,
+      margin:5,
+  }
 })

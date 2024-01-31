@@ -9,10 +9,10 @@ const MapPreview = ({latitude,longitude}) => {
     &size=700x300
     &maptype=roadmap
     &markers=color:blue%7Clabel:D%7C${latitude},${longitude}
-    &key=${googleApi.mapStatic}`
+    &key=${googleApi}`
 
   return (
-    <Image source={latitude ? {uri:mapPreviewUrl} : require("../../assets/map.jpg")} style={styles.image}/>
+    <Image source={require("../../assets/map.jpg")} style={styles.image}/>
   )
 }
 
@@ -21,6 +21,8 @@ export default MapPreview
 const styles = StyleSheet.create({
     image:{
         width:300,
-        height:300   
+        height:300,
+        borderRadius:5,
+        margin:5, 
      }
 })

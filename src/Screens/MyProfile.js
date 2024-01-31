@@ -12,7 +12,6 @@ const MyProfile = ({ navigation }) => {
   const { data: location } = useGetUserLocationQuery(localId);
 
   return (
-    <View style={styles.containerBG}>
       <View style={styles.container}>
         <Image
           source={data ? { uri: data.image } : require("../../assets/user.png")}
@@ -31,28 +30,27 @@ const MyProfile = ({ navigation }) => {
           style={styles.button}
         />
       </View>
-    </View>
   );
 };
 
 export default MyProfile;
 
 const styles = StyleSheet.create({
-  containerBG: {
-    flex: 1,
-    backgroundColor: "#20b2aa",
-  },
   container: {
     flex: 1,
-    marginTop:20,
     alignItems: "center",
+    justifyContent: "center",
+    backgroundColor:'#5f9ea0'
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 300,
+    height: 300,
+    borderRadius: 100,
+    borderWidth:5,
+    borderColor:'#2f4f4f' 
   },
-  button:{
-    borderRadius:20,
-    color:'#2f4f4f',
+  button: {
+    borderRadius: 20,
+    color: "#2f4f4f",
   }
 });

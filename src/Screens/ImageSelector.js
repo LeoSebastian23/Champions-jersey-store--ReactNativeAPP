@@ -49,10 +49,9 @@ const ImageSelector = ({navigation}) => {
             source={image ? { uri: image } : require("../../assets/user.png")}
             style={styles.image}
             resizeMode='cover'
-
         />
         <AddButton title="Tomar foto" onPress={pickImage} />
-        <AddButton title="Confirm photo" onPress={confirmImage} />
+        <AddButton title="Confirmar foto" onPress={confirmImage} />
     </View>
   )
 }
@@ -65,15 +64,14 @@ const styles = StyleSheet.create({
     container:{
         flex:1,
         alignItems:"center",
-        marginTop:20,
-        backgroundColor: "#20b2aa",
+        backgroundColor:'#5f9ea0',
+        alignItems: "center",
+        justifyContent:"center",
     },
     image:{
-        width:200,
-        height:200
+        width:300,
+        height:300,
+        borderRadius:100,
+        marginBottom:10,
     },
-    text:{
-
-
-    }
 })

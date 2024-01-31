@@ -58,6 +58,6 @@ const styles = StyleSheet.create({
     tabBar:{
       backgroundColor:"#2f4f4f",
       position:"relative",
-      height:68
+      height:68,
     }
 })
