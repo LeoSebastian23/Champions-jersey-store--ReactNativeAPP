@@ -11,9 +11,8 @@ import CartItem from "../Components/CartItem";
 import { useSelector } from "react-redux";
 import React, { useEffect } from "react";
 import { usePostOrdersMutation } from "../app/services/shopServices";
-import { useDispatch } from 'react-redux';
+import { useDispatch } from "react-redux";
 import { removeItem } from "../features/cart/cartSlice";
-
 
 const Cart = ({ navigation }) => {
   const localId = useSelector((state) => state.auth.value.localId);
@@ -25,8 +24,6 @@ const Cart = ({ navigation }) => {
   const handleConfirmPress = () => {
     triggerPostOrder({ localId, order: cart });
   };
-
-
 
   useEffect(() => {
     if (isSuccess) {
@@ -45,7 +42,7 @@ const Cart = ({ navigation }) => {
 
   return (
     <ImageBackground
-      source={require("../../assets/bg/bgcart.jpg")}
+      source={require("../../assets/bg/bgCarrito.jpg")}
       style={styles.containerIMG}
     >
       <View style={styles.container}>
@@ -54,11 +51,14 @@ const Cart = ({ navigation }) => {
             data={cart.items}
             keyExtractor={(item) => item.id}
             renderItem={({ item }) => (
-              <CartItem item={item} removeItem={() => dispatch(removeItem(item.id))} />
+              <CartItem
+                item={item}
+                removeItem={() => dispatch(removeItem(item.id))}
+              />
             )}
           />
         ) : (
-          <Text style={styles.text3}>No hay productos en el carrito.</Text>
+            <Text style={styles.text3}>No hay productos en carrito.</Text>
         )}
         <View style={styles.confirmContainer}>
           {cart.items.length > 0 ? (
@@ -68,7 +68,7 @@ const Cart = ({ navigation }) => {
             </Pressable>
           ) : (
             <Pressable onPress={() => navigation.navigate("Home")}>
-              <Text style={styles.text}>Ir a productos</Text>
+              <Text style={styles.text}>Presione aqui para ir a Productos</Text>
             </Pressable>
           )}
         </View>
@@ -85,6 +85,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     justifyContent: "center",
     alignItems: "center",
+    opacity:0.9
   },
   confirmContainer: {
     backgroundColor: "#20b2aa",
@@ -94,13 +95,15 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     opacity: 0.95,
     width: "80%",
-    borderColor:'#2f4f4f',
-    borderWidth:0.9,
+    borderColor: "#2f4f4f",
+    borderWidth: 4,
   },
   text: {
     color: "white",
-    fontSize: 24,
+    fontSize: 26,
     justifyContent: "center",
+    textAlign:"center",
+    
   },
   text2: {
     color: "white",
@@ -109,16 +112,18 @@ const styles = StyleSheet.create({
   },
   text3: {
     color: "white",
-    fontSize: 24,
-    justifyContent: "center",
-    backgroundColor:'#2f4f4f',
+    fontSize: 26,
+    backgroundColor: "#20b2aa",
+    padding: 10,
+    margin:10,
     borderRadius: 20,
-    paddingHorizontal:15,
-    padding:10,
-    margin:5,
+    opacity: 0.95,
+    borderColor: "#2f4f4f",
+    borderWidth: 0.9,
+    textAlign:"center"
   },
   containerIMG: {
     flex: 1,
-    resizeMode: "cover",
-  },
+    resizeMode: "contain",
+  }, 
 });

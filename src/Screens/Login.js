@@ -12,7 +12,7 @@ import { setUser } from '../features/auth/authSlice'
 
 const Login = ({navigation}) => {
   const dispatch = useDispatch()
-  const [triggerLogin,{data,isError,isSuccess,error,isLoading}] = useLoginMutation()
+  const [triggerLogin,{data,isError,isSuccess,error}] = useLoginMutation()
   const [email,setEmail] = useState("")
   const [password,setPassword] = useState("")
 

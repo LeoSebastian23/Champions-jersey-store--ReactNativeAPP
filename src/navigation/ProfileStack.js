@@ -20,7 +20,7 @@ const ProfileStack = () => {
     >
         <Stack.Screen name="MyProfile" component={MyProfile} />
         <Stack.Screen name="ImageSelector" component={ImageSelector} />
-        <Stack.Screen name="LocationSelector" component={LocationSelector} />
+        {/* <Stack.Screen name="LocationSelector" component={LocationSelector} /> */}
     </Stack.Navigator>
   )
 }

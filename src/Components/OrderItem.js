@@ -4,11 +4,11 @@ import { colors } from '../Global/colors'
 
 const OrderItem = ({order}) => {
 
-
   return (
     <View style={styles.container}>
       <View style={styles.textContainer}>
-            <Text style={styles.text1}>{order.updateAt}</Text>
+            <Text style={styles.text1}>Compra realizada:</Text>
+            <Text style={styles.text2}>{order.updateAt}</Text>
             <Text style={styles.text2}>Total: $ {order.total}</Text>
       </View>
       <Feather name="search" size={25} color="black"/>
@@ -38,7 +38,6 @@ const styles = StyleSheet.create({
     text1:{
         fontSize:19,
         fontWeight:"bold",
-
     },
     text2:{
         fontSize:17,
