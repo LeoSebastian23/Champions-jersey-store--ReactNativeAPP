@@ -1,0 +1,110 @@
+[
+    {
+       "description": "Mundial de Qatar 2022",
+       "id": 1,
+       "id_categoria": 1,
+       "images": [
+          "https://i.ibb.co/rQFSNHJ/Titular.webp"
+       ],
+       "price": 500,
+       "stock": 94,
+       "thumbnail": "https://i.ibb.co/rQFSNHJ/Titular.webp",
+       "title": "Argentina 2022"
+    },
+    {
+       "description": "Mundial de Rusia 2018",
+       "id": 2,
+       "id_categoria": 1,
+       "images": [
+          "https://i.ibb.co/Kwx5vyk/france2018.jpg"
+       ],
+       "price": 500,
+       "stock": 94,
+       "thumbnail": "https://i.ibb.co/Kwx5vyk/france2018.jpg",
+       "title": "Francia 2018"
+    },
+    {
+       "description": "Mundial de Brasil 2014",
+       "id": 3,
+       "id_categoria": 1,
+       "images": [
+          "https://i.ibb.co/5LCgkdW/germany-home-jersey-2013-15.webp"
+       ],
+       "price": 500,
+       "stock": 94,
+       "thumbnail": "https://i.ibb.co/5LCgkdW/germany-home-jersey-2013-15.webp",
+       "title": "Alemania 2014"
+    },
+    {
+       "description": "Copa Libertadores 2018",
+       "id": 4,
+       "id_categoria": 2,
+       "images": [
+          "https://i.ibb.co/WBg0GB6/river2018.jpg"
+       ],
+       "price": 500,
+       "stock": 94,
+       "thumbnail": "https://i.ibb.co/WBg0GB6/river2018.jpg",
+       "title": "River 2018"
+    },
+    {
+       "description": "Copa Libertadores 2023",
+       "id": 5,
+       "id_categoria": 2,
+       "images": [
+          "https://i.ibb.co/LzpYwC3/flu2023.webp"
+       ],
+       "price": 500,
+       "stock": 94,
+       "thumbnail": "https://i.ibb.co/LzpYwC3/flu2023.webp",
+       "title": "Fluminense 2023"
+    },
+    {
+       "description": "Copa Libertadores 2007",
+       "id": 6,
+       "id_categoria": 2,
+       "images": [
+          "https://i.ibb.co/J52PbcP/boca2007.webp"
+       ],
+       "price": 500,
+       "stock": 94,
+       "thumbnail": "https://i.ibb.co/J52PbcP/boca2007.webp",
+       "title": "Boca 2007"
+    },
+    {
+       "description": "Champions Leagues 2022/2023",
+       "id": 7,
+       "id_categoria": 3,
+       "images": [
+          "https://i.ibb.co/qNSHfyQ/city2023.webp"
+       ],
+       "price": 500,
+       "stock": 94,
+       "thumbnail": "https://i.ibb.co/qNSHfyQ/city2023.webp",
+       "title": "Manchester City 2022/2023"
+    },
+    {
+       "description": "Champions Leagues 2017/2018",
+       "id": 8,
+       "id_categoria": 3,
+       "images": [
+          "https://i.ibb.co/yQ78bpC/real2018.jpg"
+       ],
+       "price": 500,
+       "stock": 94,
+       "thumbnail": "https://i.ibb.co/yQ78bpC/real2018.jpg",
+       "title": "Real Madrid 2017/2018"
+    },
+    {
+       "description": "Champions Leagues 2014/2015",
+       "id": 9,
+       "id_categoria": 3,
+       "images": [
+          "https://i.ibb.co/QjbfGJb/barcelona2015.jpg"
+       ],
+       "price": 500,
+       "stock": 94,
+       "thumbnail": "https://i.ibb.co/QjbfGJb/barcelona2015.jpg",
+       "title": "Bacerlona 2014/2015"
+    }
+ ]

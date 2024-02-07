@@ -1,0 +1,17 @@
+[
+    {
+       "id": 1,
+       "imagen": "https://i.ibb.co/4tTgy9j/cupworld.jpg",
+       "nombre": "Copa del Mundo"
+    },
+    {
+       "id": 2,
+       "imagen": "https://i.ibb.co/SKZd2Vm/copa-libertadores-0.webp",
+       "nombre": "Copa Libertadores"
+    },
+    {
+       "id": 3,
+       "imagen": "https://i.ibb.co/XjhYpkD/championsleagues.webp",
+       "nombre": "Champions Leagues"
+    }
+ ]

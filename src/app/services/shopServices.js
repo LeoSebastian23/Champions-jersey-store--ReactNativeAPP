@@ -8,8 +8,9 @@ export const shopApi = createApi({
   tagTypes:["image","location","order"],
   endpoints: (builder) => ({
     getProducts: builder.query({
-      query: (category) => `products.json?orderBy="category"&equalTo="${category}"`,
+      query: (id) => `products.json?orderBy="id_categoria"&equalTo="${id}"`,
     }),
+    
     getProduct: builder.query({
         query:(id)=> `products/${id}.json`
     }),
