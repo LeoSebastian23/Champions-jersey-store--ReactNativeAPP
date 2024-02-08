@@ -9,8 +9,8 @@ Una aplicación movil centrada en la venta de camisetas de futbol que han levant
 - **Acceso seguro:** Solo los usuarios autenticados pueden acceder a la pantalla de perfil y realizar compras.
 - **Información del usuario:** Cada usuario puede elegir su propia imagen de perfil
 
-<img src="./screenshot/Screenshot_1705910419.png" width="300" >
-<img src="./screenshot/Screenshot_1705910424.png" width="300" >
+<img src="./screenshot/loginCH.jpeg" width="300" >
+<img src="./screenshot/signupCH.jpeg" width="300" >
 
 
 ### Autenticación con Firebase
@@ -35,9 +35,9 @@ Una aplicación movil centrada en la venta de camisetas de futbol que han levant
 - Muestra el precio y la descripcion de la competencia y el año de la camiseta.
 - Permite agregar el producto al carrito.
 
-<img src="./screenshot/Screenshot_1705910438.png" width="300" >
-<img src="./screenshot/Screenshot_1705910442.png" width="300" >
-<img src="./screenshot/Screenshot_1705910445.png" width="300" >
+<img src="./screenshot/categoriesCH.jpeg" width="300" >
+<img src="./screenshot/categoryCH.jpeg" width="300" >
+<img src="./screenshot/productCH.jpeg" width="300" >
 
 ### Navegación Inferior
 
@@ -46,8 +46,8 @@ Una aplicación movil centrada en la venta de camisetas de futbol que han levant
 - **Pestaña 3 - Órdenes:** Historial de órdenes realizadas.
 - **Pestaña 4 - Perfil:** Información del usuario y carga de imagen de perfil.
 
-<img src="./screenshot/Screenshot_1705910459.png" width="300" >
-<img src="./screenshot/Screenshot_1705910463.png" width="300" >
+<img src="./screenshot/carritoCH.jpeg" width="300" >
+<img src="./screenshot/ordenesCH.jpeg" width="300" >
 
 ## Tecnologías Utilizadas
 
