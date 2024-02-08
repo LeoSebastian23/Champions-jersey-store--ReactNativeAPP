@@ -41,8 +41,8 @@ export default CategoryItem;
 
 const styles = StyleSheet.create({
   container: {
-    width: 'auto',
-    height: 250,
+    width: 'auto', 
+    height: 215,
     backgroundColor: `rgba(0, 0, 0, 0.5)`,
     margin: 10,
     padding: 5,
