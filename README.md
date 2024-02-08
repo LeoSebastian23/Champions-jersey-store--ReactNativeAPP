@@ -46,7 +46,7 @@ Una aplicación movil centrada en la venta de camisetas de futbol que han levant
 - **Pestaña 3 - Órdenes:** Historial de órdenes realizadas.
 - **Pestaña 4 - Perfil:** Información del usuario y carga de imagen de perfil.
 
-<img src="./Screenshot/carritoCH.jpeg" width="300" >
+<img src="./Screenshot/cartCH.jpeg" width="300" >
 <img src="./Screenshot/cart.jpeg" width="300" >
 <img src="./Screenshot/ordenesCH.jpeg" width="300" >
 
