@@ -9,7 +9,7 @@
     "splash": {
       "image": "./assets/jersey.png",
       "resizeMode": "contain",
-      "backgroundColor": "#66cdaa"
+      "backgroundColor": "#F4F27E"
     },
     "assetBundlePatterns": [
       "**/*"

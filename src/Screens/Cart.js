@@ -42,7 +42,7 @@ const Cart = ({ navigation }) => {
 
   return (
     <ImageBackground
-      source={require("../../assets/bg/bgCarrito.jpg")}
+      source={require("../../assets/bg/HomeBG.jpg")}
       style={styles.containerIMG}
     >
       <View style={styles.container}>
@@ -99,19 +99,19 @@ const styles = StyleSheet.create({
     borderWidth: 4,
   },
   text: {
-    color: "white",
+    color: "black",
     fontSize: 26,
     justifyContent: "center",
     textAlign:"center",
     
   },
   text2: {
-    color: "white",
+    color: "black",
     fontSize: 15,
     justifyContent: "center",
   },
   text3: {
-    color: "white",
+    color: "black",
     fontSize: 26,
     backgroundColor: "#20b2aa",
     padding: 10,
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     opacity: 0.95,
     borderColor: "#2f4f4f",
-    borderWidth: 0.9,
+    borderWidth: 4,
     textAlign:"center"
   },
   containerIMG: {

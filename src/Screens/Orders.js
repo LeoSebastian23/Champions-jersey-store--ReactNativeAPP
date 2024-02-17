@@ -28,7 +28,7 @@ const Orders = () => {
   if (!info)
     return (
       <ImageBackground
-        source={require("../../assets/bg/bgOrder.webp")}
+        source={require("../../assets/bg/HomeBG.jpg")}
         style={styles.containerIMG}
       >
         <Text style={styles.text2}>No hay ordenes</Text>
@@ -44,7 +44,7 @@ const Orders = () => {
 
   return (
     <ImageBackground
-      source={require("../../assets/bg/bgOrder.webp")}
+      source={require("../../assets/bg/HomeBG.jpg")}
       style={styles.containerIMG}
     >
       <FlatList

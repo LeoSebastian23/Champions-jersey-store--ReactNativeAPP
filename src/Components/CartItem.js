@@ -1,6 +1,5 @@
 import { StyleSheet, Text, View } from "react-native";
 import { Entypo } from "@expo/vector-icons";
-import { colors } from "../Global/colors";
 
 const CartItem = ({ item, removeItem }) => {
   return (
@@ -12,15 +11,15 @@ const CartItem = ({ item, removeItem }) => {
             <Text style={styles.text2}>- Cantidad: {item.quantity} </Text>
             <Text style={styles.text2}>- Precio: $ {item.price}</Text>
           </View>
-        <Entypo
-          name="trash"
-          size={25}
-          color="black"
-          style={styles.item}
-          onPress={removeItem}
-        />
+          <Entypo
+            name="trash"
+            size={25}
+            color="black"
+            style={styles.item}
+            onPress={removeItem}
+          />
+        </View>
       </View>
-    </View>
     </View>
   );
 };
@@ -41,7 +40,6 @@ const styles = StyleSheet.create({
   },
   textContainer: {
     flexDirection: "column",
-    
   },
   text1: {
     fontSize: 28,
@@ -51,22 +49,22 @@ const styles = StyleSheet.create({
     margin: 5,
     padding: 5,
     borderBottomWidth: 2,
-    letterSpacing:1,
+    letterSpacing: 1,
   },
   text2: {
     fontSize: 22,
     color: "#000000",
     margin: 5,
-    fontStyle:'italic'
+    fontStyle: "italic",
   },
   item: {
     margin: 5,
     padding: 10,
   },
-  container001:{
+  container001: {
     justifyContent: "space-between",
     flexDirection: "row",
-    alignItems:"center",
+    alignItems: "center",
   },
   container002: {
     justifyContent: "flex-start",
