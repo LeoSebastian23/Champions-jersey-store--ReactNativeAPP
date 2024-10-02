@@ -1,4 +1,4 @@
-# Champions jersey store 🥇⚽
+# Tienda de Camisetas🥇⚽
 
 Una aplicación movil centrada en la venta de camisetas de futbol que han levantado importantes trofeos. Ofrece una experiencia de compra completa y fácil de usar.
 
